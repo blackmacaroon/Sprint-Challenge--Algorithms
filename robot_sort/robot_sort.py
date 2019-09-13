@@ -96,9 +96,21 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
+        #pick up first item, if None, scoot right.
+        self.swap_item()
+        #scoot right, compare. if hand_item is > floor_item, scoot right, compare
+        #if hand_item < floor_item, swap, then scoot right, compare 
+        
         pass
-
+'''
+understand the problem
+    use bubble sort to swap items in a list until they're in order
+    -can't create variables (no temp variable, no insertion), can't edit functions, 
+plan
+    -pick up first one, move right
+    -compare: if >, move right, else swap
+    -when can move right = false, return to position 0 and swap.
+'''
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
