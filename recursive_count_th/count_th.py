@@ -11,7 +11,7 @@ understand the problem
 plan
     -edge cases
     -set empty variable
-    -recursively 
+    -recursively ?????
 '''
 def count_th(word):
     if len(word) < 3:
@@ -19,7 +19,7 @@ def count_th(word):
     if word == "th":
         return 1
     else:
-        return word.lower().count("th")
+        return word.count("th")
 
 count_th("this is the worst")
 

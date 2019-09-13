@@ -20,7 +20,7 @@ the runtime is unaffected by the size of the input
 
 #
 I'd climb to n//2 and drop an egg
-if it doesn't break I head UP
+if it doesn't break, I head UP
 if it breaks, I head DOWN 
 
 the remaining floors = 2, head to n//2. Drop another egg.
