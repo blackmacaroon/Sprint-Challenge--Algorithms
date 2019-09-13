@@ -96,20 +96,26 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        self.set_light_on() #on if we're going right -dont know what the light is doing for us yet..
+        #pick up first item, if None, scoot right.
+        self.swap_item()
         while self.can_move_right:
-            #pick up first item, if None, scoot right.
-            self.swap_item()
+            while not self.can_move_right:
+                self.move_left
+            # if not self.can_move_right():     #goes without saying, right??
+            #     self.set_light_off #off means we can't go right anymore, we gotta go back
             #scoot right, compare. 
-            self.move_right()
+            # self.move_right()
             #if hand_item is > floor_item, = 1 = scoot right, compare
             if self.compare_item() == 1:
-                self.move_right()
-                self.compare_item()
+                self.move_right
             #if hand_item < floor_item, = 1- = swap, then scoot right, compare
-            if self.compare_item() == -1:
+            elif self.compare_item() == -1:
                 self.swap_item()
                 self.move_right()
-                self.compare_item()
+        
+                
+            #when it hits the far right, we swap the largest and head all the way back to the left
          
         
         
