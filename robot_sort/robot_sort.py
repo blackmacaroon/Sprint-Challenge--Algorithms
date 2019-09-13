@@ -96,10 +96,22 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        #pick up first item, if None, scoot right.
-        self.swap_item()
-        #scoot right, compare. if hand_item is > floor_item, scoot right, compare
-        #if hand_item < floor_item, swap, then scoot right, compare 
+        while self.can_move_right:
+            #pick up first item, if None, scoot right.
+            self.swap_item()
+            #scoot right, compare. 
+            self.move_right()
+            #if hand_item is > floor_item, = 1 = scoot right, compare
+            if self.compare_item() == 1:
+                self.move_right()
+                self.compare_item()
+            #if hand_item < floor_item, = 1- = swap, then scoot right, compare
+            if self.compare_item() == -1:
+                self.swap_item()
+                self.move_right()
+                self.compare_item()
+         
+        
         
         pass
 '''
