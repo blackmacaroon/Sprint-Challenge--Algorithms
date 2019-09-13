@@ -3,8 +3,8 @@
 ## Exercise I
 
 a)
-Constant  O(1)
-the runtime is unaffected by the size of the input
+Linear O(n)
+the runtime shrinks/grows at the same rate as the input
 
 b)
 Logarithmic O(log n)
@@ -12,8 +12,9 @@ as the size of the input increases, the runtime grows but at a slightly slower r
 
 
 c)
-Linear O(n)
-the runtime shrinks/grows at the same rate and the input
+Constant  O(1)
+the runtime is unaffected by the size of the input
+
 
 ## Exercise II
 
@@ -22,30 +23,7 @@ I'd climb to n//2 and drop an egg
 if it doesn't break I head UP
 if it breaks, I head DOWN 
 
-i'd divide the remaining floors head to the middle one. Drop another egg.
+the remaining floors = 2, head to n//2. Drop another egg.
+recursively until I find the floor there the egg does not break
 
-if it doesn't break I head UP
-if it breaks, I head DOWN
-
-i'd divide the remaining floors head to the middle one. Drop another egg.
-
-if it doesn't break I head UP
-if it breaks, I head DOWN
-
-i'd divide the remaining floors head to the middle one. Drop another egg.
-
-if it doesn't break I head UP
-if it breaks, I head DOWN
-
-i'd divide the remaining floors head to the middle one. Drop another egg.
-
-if it doesn't break I head UP
-if it breaks, I head DOWN
-
-i'd divide the remaining floors head to the middle one. Drop another egg.
-
-if it doesn't break I head UP
-if it breaks, I head DOWN
-
-until i'm out of floors or I find the one where it stops breaking. I suspect it would be the bottom floor.
-binary sort is O(log(n))
+Time Complexity: O(log n)
