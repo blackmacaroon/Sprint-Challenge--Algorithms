@@ -96,46 +96,38 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        #bubble sort
-        self.set_light_on() #on if we're going right -dont know what the light is doing for us yet..
+        # bubble sort?
+        self.set_light_on() #starts with the light on (remember "swap occured")
         
-        while self.light_is_on() == True:
-            self.set_light_off() #assume the best, assume we're done!
-            #pick up first item, scoot right
-            self.swap_item()
-            if not self.can_move_right():
-                self.move_left()
-            while self.can_move_right():
+        while self.light_is_on() == True: #light on means a swap occured
+            self.set_light_off() #assume the best at the start of the loop, assume we're done! from bubble sort assignment
+            while self.can_move_right() == True:
+                #pick up first item, scoot right
+                self.swap_item()
                 self.move_right()
-            # if not self.can_move_right():     #goes without saying, right??
-            #     self.set_light_off #off means we can't go right anymore, we gotta go back
-            #scoot right, compare. 
-            # self.move_right()
-                #if hand_item is > floor_item, = 1 = scoot right, compare
+                #if hand_item is > floor_item = 1
                 if self.compare_item() == 1:
+                    # swap for the smaller item
                     self.swap_item()
+                    # light on because a swap occured
                     self.set_light_on()
-                #if hand_item < floor_item, = 1- = swap, then scoot right, compare # i think I have this backwards
-                
-                self.move_right()
-                while self.compare_item() is not None:
+                    
+                    # scoot left, swap out smaller item, move right
                     self.move_left()
-        
-                
-            #when it hits the far right, we swap the largest and head all the way back to the left
+                    self.swap_item()
+                    self.move_right()
+                #if hand_item < floor_item, = -1 
+                elif self.compare_item() == -1:
+                    #go back and drop it off, move onward 
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+            while self.can_move_left() == True:
+                self.move_left()
+            
+            #edge cases??  is None?
          
-        
-        
-        
-'''
-understand the problem
-    use bubble sort to swap items in a list until they're in order
-    -can't create variables (no temp variable, no insertion), can't edit functions, 
-plan
-    -pick up first one, move right
-    -compare: if >, move right, else swap
-    -when can move right = false, return to position 0 and swap.
-'''
+
 
 if __name__ == "__main__":
     # Test our your implementation from the command line

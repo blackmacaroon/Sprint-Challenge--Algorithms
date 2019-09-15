@@ -7,13 +7,13 @@ Linear O(n)
 the runtime shrinks/grows at the same rate as the input
 
 b)
-Logarithmic O(log n)
-as the size of the input increases, the runtime grows but at a slightly slower rate
+<!-- Logarithmic O(log n)
+as the size of the input increases, the runtime grows but at a slightly slower rate -->
 
 
 c)
-Constant  O(1)
-the runtime is unaffected by the size of the input
+Factorial  O(n!)
+<!-- the runtime is unaffected by the size of the input --> -->
 
 
 ## Exercise II
