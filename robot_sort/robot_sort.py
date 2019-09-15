@@ -114,14 +114,12 @@ class SortingRobot:
                     
                     # scoot left, swap out smaller item, move right
                     self.move_left()
-                    self.swap_item()
-                    self.move_right()
                 #if hand_item < floor_item, = -1 
                 elif self.compare_item() == -1:
                     #go back and drop it off, move onward 
                     self.move_left()
-                    self.swap_item()
-                    self.move_right()
+                self.swap_item()
+                self.move_right()    
             while self.can_move_left() == True:
                 self.move_left()
             
