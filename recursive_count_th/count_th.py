@@ -3,35 +3,27 @@ Your function should take in a single parameter (a string `word`)
 Your function should return a count of how many occurences of ***"th"*** occur within `word`. Case matters.
 Your function must utilize recursion. It cannot contain any loops.
 '''
-'''
-understand the problem
-    -takes in a string
-    -counts the "th"
-    -can't use loops
-plan
-    -edge cases
-    -set empty variable
-    -recursively ?????
-'''
+
 def count_th(word):
-    counth = 0
-    if len(word) == 0:
-            return 0
-    if len(word) < 3:
+    subString = "th"
+    l1 = len(word)
+    l2 = len(subString)
+    # base case | edge cases
+    if (l1 == 0 or l1 < l2):
         return 0
-    if word == "th":
+    if word == subString:
         return 1
-    # else:
-    #     return word.count("th")
+    # recursive case
+    if (word[0 : l2] == subString): 
+        return count_th(word[l2 - 1:]) + 1
+    # Otherwise, return the count 
+    # from the remaining index 
+    else:
+        return count_th(word[l2 - 1:])
 
-    def help_me_count(word):
-        if word[0:2] == "th":
-            counth += 1
-    
-        return count
-    elif #th does appear, recursively iterate with index + 1 and count + 1]
 
-count_th("this is the worst")
+print(count_th("this is the worst"))
+
 
    
 
