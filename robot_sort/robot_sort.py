@@ -96,8 +96,35 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # bubble sort?
+        self.set_light_on() #starts with the light on (remember "swap occured")
+        
+        while self.light_is_on() == True: #light on means a swap occured
+            self.set_light_off() #assume the best at the start of the loop, assume we're done! from bubble sort assignment
+            while self.can_move_right() == True:
+                #pick up first item, scoot right
+                self.swap_item()
+                self.move_right()
+                #if hand_item is > floor_item = 1
+                if self.compare_item() == 1:
+                    # swap for the smaller item
+                    self.swap_item()
+                    # light on because a swap occured
+                    self.set_light_on()
+                    
+                    # scoot left, swap out smaller item, move right
+                    self.move_left()
+                #if hand_item < floor_item, = -1 
+                elif self.compare_item() == -1:
+                    #go back and drop it off, move onward 
+                    self.move_left()
+                self.swap_item()
+                self.move_right()    
+            while self.can_move_left() == True:
+                self.move_left()
+            
+            #edge cases??  is None?
+         
 
 
 if __name__ == "__main__":
